@@ -11,18 +11,19 @@ class ItemList extends Component {
 
     render(){
         let{cur, item, onComplete, onDelete} = this.props
-
         let pitem= item.filter(item => item.p_id==cur)
         console.log(cur)
         let itemlist = pitem.map(
             ({id, text, check}) => (
                 <Item
+                    item={item}
                     key={id}
                     id={id}
                     text={text}
                     check={check}
                     onComplete={onComplete}
-                    onDelete={onDelete}   
+                    onDelete={onDelete}  
+                    onSetState={this.props.onSetState} 
                 />
             )
         )

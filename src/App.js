@@ -55,6 +55,14 @@ class App extends Component{
     }
   }
 
+  handleUpdate = (id) => {
+
+    
+    // this.setState({
+    //   input: 
+    // })
+  }
+
   handleComplete = (id) => {
     const {item} = this.state;
 
@@ -80,7 +88,7 @@ class App extends Component{
       item: item.filter(item => item.id!=id)
     })
   } 
-
+  
   createFolder = () => {
     const {folder} = this.state;
     
@@ -95,7 +103,7 @@ class App extends Component{
 
   //다른 클래스에서 이곳의 state를 변경하기 위한 함수
   handleSetState = state => {
-    console.log("this.state", this.state)
+    console.log("this.state", state)
     this.setState(state, () => { //state를 변경한 뒤에 call back 함수 실행
       console.log("callback", this.state)
     })
@@ -129,6 +137,7 @@ class App extends Component{
               item={item} 
               onComplete={handleComplete}
               onDelete={handleDelete}
+              onUpdate={this.handleUpdate}
               onSetState={this.handleSetState}>
             </ItemList>
         }

@@ -40,9 +40,6 @@ class Template extends Component{
                 <section className="form_container">
                     {form}
                 </section>
-                <section className="list_container">
-                    {list}
-                </section>
             </div>
         )
     }
